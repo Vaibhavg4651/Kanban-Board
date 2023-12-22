@@ -1,18 +1,26 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import arw from "../assets/down.png";
+import {setgroup , setTheme , setorder} from "../reducers/stateSlice.jsx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Select your time slot");
-
+  const dispatch = useDispatch();
+  const group = useSelector((state) => state.states.group);
+  const order = useSelector((state) => state.states.order);
+  const theme = useSelector((state) => state.states.theme);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleOptionSelect = (value, option) => {
-    setSelectedOption(option);
-    setIsOpen(false);
+  const handleOrderSelect = (event) => {
+    dispatch(setorder(event.target.value));
   };
+
+  const handleGroupSelect = (event) => {
+    dispatch(setgroup(event.target.value));
+  };
+
 
   return (
     <div className="Navbar">
@@ -46,27 +54,22 @@ const Navbar = () => {
           <section className="maintime">
             <div className="group">
               <span style={{color:"#a7a6a6"}}>Grouping</span>
-              <select name="" className="select">
-                <option value="">Status</option>
-                <option value="">User</option>
-                <option value="">Priority</option>
+              <select name="group" className="select" value={group} onChange={handleGroupSelect}>
+                <option value="status">Status</option>
+                <option value="user">User</option>
+                <option value="priority">Priority</option>
               </select>
             </div>
             <div className="group">
               <span style={{color:"#a7a6a6"}}>Ordering</span>
-              <select name="" className="select">
-              <option value="">Status</option>
-                <option value="">User</option>
-                <option value="">Priority</option>
+              <select name="order" className="select" value={order} onChange={handleOrderSelect}>
+                <option value="status" >Status</option>
+                <option value="user">User</option>
+                <option value="priority">Priority</option>
               </select>
             </div>
           </section>
         )}
-        <input
-          type="hidden"
-          id="dropdown-value"
-          name="dropdown-value"
-        />
       </div>
       <button className="toggle"></button>
     </div>

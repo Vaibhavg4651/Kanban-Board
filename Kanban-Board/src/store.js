@@ -11,7 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist'
 
-const allreducers=combineReducers({"user":statereducers})
+const allreducers=combineReducers({"states":statereducers})
 const persistConfig = {
   key: 'root',
   storage

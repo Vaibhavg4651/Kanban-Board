@@ -2,21 +2,23 @@ import { createSlice } from "@reduxjs/toolkit";
 const stateSlice = createSlice({
     name: 'states',
     initialState: {
-        isloggedin:false,
-        userdata:null,
+        group: "status",
+        order: "status",
+        theme: "light",
     },
     reducers: {
-     
-      setdata(state,action){
-        state.userdata=action.payload
+      setgroup(state,action){
+        state.group=action.payload
       },
-     
-      setisLoggedin(state,action){
-        state.isloggedin=action.payload
+      setorder(state,action){
+        state.order=action.payload
       },
+      setTheme(state,action){
+        state.theme=action.payload
+      }
     },
   })
 
 
   export default stateSlice.reducer
-  export const {setdata,setisLoggedin}=userSlice.actions
+  export const {setgroup,setorder,setTheme}=stateSlice.actions
