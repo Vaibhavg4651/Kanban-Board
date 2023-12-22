@@ -3,7 +3,9 @@ const stateSlice = createSlice({
     name: 'states',
     initialState: {
         group: "status",
-        order: "status",
+        order: "priority",
+        users: [],
+        tickets: [],
         theme: "light",
     },
     reducers: {
@@ -15,10 +17,17 @@ const stateSlice = createSlice({
       },
       setTheme(state,action){
         state.theme=action.payload
-      }
+      },
+      setusers(state,action){
+        state.users=action.payload
+      },
+      settickets(state,action){
+            state.tickets=action.payload
+        },
+
     },
   })
 
 
   export default stateSlice.reducer
-  export const {setgroup,setorder,setTheme}=stateSlice.actions
+  export const {setgroup,setorder,setTheme, settickets , setusers}=stateSlice.actions

@@ -63,9 +63,8 @@ const Navbar = () => {
             <div className="group">
               <span style={{color:"#a7a6a6"}}>Ordering</span>
               <select name="order" className="select" value={order} onChange={handleOrderSelect}>
-                <option value="status" >Status</option>
-                <option value="user">User</option>
                 <option value="priority">Priority</option>
+                <option value="title">Title</option>
               </select>
             </div>
           </section>

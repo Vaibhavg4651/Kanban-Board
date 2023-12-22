@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
+import Card from './components/Card'
+import CardLayout from './components/CardLayout'
 
 function App() {
 
@@ -8,7 +10,10 @@ function App() {
     <>
     <div>
       <Navbar/>
-      <div style={{backgroundColor : "gray"}}>Hello</div>
+      <div style={{backgroundColor : "#f5f4f8", height: "100vh"}}>
+        {/* <Card/> */}
+        <CardLayout/>
+      </div>
     </div>
     </>
   )
