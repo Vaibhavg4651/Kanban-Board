@@ -1,6 +1,77 @@
 .Navbar{
-  margin: 1rem 0;
   padding: 1rem;
   height: auto;
   background-color: #fffefe;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Display{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #fefeff;
+}
+
+.display-icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 7rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
+  color: #373737;
+  box-shadow: #0000001a 0 0 8px 0 ;
+  border: 1px solid #e6e7eb;
+}
+
+.maintime{
+  position: absolute;
+  background-color:#ffff;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  top: 113%;
+  left: 0;
+  color: #373737;
+  box-shadow: #0000001a 0 0 8px 0 ;
+  gap:10px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  border: 1px solid #e6e7eb;
+}
+
+.group{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  font-size: 1rem;
+}
+
+.select{
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #e6e7eb;
+  padding: 0.2rem 2rem 0.2rem 0.5rem;
+  background-color: #ffff;
+  color: #5a5b5b;
+}
+
+.icon-container{
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  height: 16px;
+}
+
+.rotate{
+  transform: rotate(180deg);
 }

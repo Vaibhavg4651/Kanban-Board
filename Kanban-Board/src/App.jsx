@@ -8,6 +8,7 @@ function App() {
     <>
     <div>
       <Navbar/>
+      <div style={{backgroundColor : "gray"}}>Hello</div>
     </div>
     </>
   )
